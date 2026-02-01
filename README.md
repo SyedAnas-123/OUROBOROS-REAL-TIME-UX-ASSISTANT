@@ -27,25 +27,12 @@ Ouroboros introduces a new loop for autonomous repair:
 
 ---
 
-## 📂 Project Structure
-
-```text
-OUROBOROS-HACKATHON/      (ROOT FOLDER)
-├── agent.py              # The AI Logic (Talks to Gemini)
-├── server.py             # The Backend Server (Listens for Video Uploads)
-├── incident_capture.webm # (Auto-generated) The evidence video
-├── vibe-check/           # (FRONTEND FOLDER - React App)
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── BlackBoxRecorder.jsx  # The "Spy" component
-│   │   └── App.jsx
-│   └── package.json
-└── README.md
-
 ⚡ How to Run (Step-by-Step)
+
 You will need two separate terminals running at the same time.
 
 1. Prerequisites
+
 Node.js & npm installed.
 
 Python 3.10+ installed.
@@ -55,42 +42,50 @@ A Google Gemini API Key.
 Git installed and configured.
 
 2. Terminal 1: The Backend (Python)
+
 This server listens for the "Rage Click" video file and triggers the AI agent.
 
 Open a terminal in the ROOT folder (OUROBOROS-HACKATHON).
 
 Install dependencies:
 
-Bash
 pip install flask flask-cors google-genai
-Important: Open agent.py and paste your Gemini API Key in the configuration section.
+
+
+Configuration: Open agent.py and paste your Gemini API Key in the API_KEY variable.
 
 Run the server:
 
-Bash
 python server.py
+
+
 ✅ You should see: "🟢 Ouroboros Server Listening for Videos on Port 5000..."
 
 3. Terminal 2: The Frontend (React)
+
 This is the E-commerce store that the user interacts with.
 
 Open a new terminal.
 
-Navigate inside the vibe-check folder:
+Navigate inside the app folder:
 
-Bash
 cd vibe-check
+
+
 Install dependencies (first time only):
 
-Bash
 npm install
+
+
 Run the website:
 
-Bash
 npm run dev
+
+
 ✅ You should see: "Local: http://localhost:5173/"
 
 🎬 How to Demo (The Vibe Check)
+
 Open your browser to http://localhost:5173.
 
 Activate the Recorder: Click the "⏺️ Start Beta Session" button (bottom right) and select your current tab/screen.
@@ -110,6 +105,7 @@ VS Code: You will see the ProductCard.jsx file update automatically!
 Browser: The page refreshes, and the button now works.
 
 🧠 AI Model Strategy
+
 We utilize Gemini 2.5 Flash for its high throughput and large context window.
 
 Video Understanding: Maps temporal visual data (user clicking) to static code structure.
@@ -117,4 +113,21 @@ Video Understanding: Maps temporal visual data (user clicking) to static code st
 Sniper Mode: To optimize performance and cost, the agent targets specific component files based on the error context, rather than scanning the entire repository unnecessarily.
 
 📜 License
+
 MIT License. Built for the Gemini 3 Hackathon 2026.
+
+## 📂 Project Structure
+
+```text
+OUROBOROS-HACKATHON/      (ROOT FOLDER)
+├── agent.py              # The AI Logic (Talks to Gemini)
+├── server.py             # The Backend Server (Listens for Video Uploads)
+├── incident_capture.webm # (Auto-generated) The evidence video
+├── vibe-check/           # (FRONTEND FOLDER - React App)
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── BlackBoxRecorder.jsx  # The "Spy" component
+│   │   └── App.jsx
+│   └── package.json
+└── README.md
+
