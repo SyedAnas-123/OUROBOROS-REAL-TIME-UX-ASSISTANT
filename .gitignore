@@ -1,0 +1,16 @@
+# Ignore React Dependencies
+node_modules/
+dist/
+.env
+
+# Ignore Python Junk
+__pycache__/
+*.pyc
+venv/
+.venv/
+incident_capture.webm
+bug_video.mp4
+
+# Ignore System Files
+.DS_Store
+Thumbs.db
